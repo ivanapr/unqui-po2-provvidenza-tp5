@@ -17,14 +17,15 @@ public class Caja {
 	/**
 	 * Lista de las ordenes de compra facturadas por la caja.
 	 */
-	ArrayList <OrdenDeCompra> facturadas;
+	ArrayList <OrdenDeCompra> orden, facturadas;
 	
 	/**
 	 * Constructor. Crea una instancia default de Caja.
 	 * Con stock vacio.
 	 */
 	public Caja() {
-		facturadas = new ArrayList <OrdenDeCompra>();
+		orden = new ArrayList <OrdenDeCompra>();
+		stock = new Stock();
 	}
 	
 	/**
@@ -32,6 +33,7 @@ public class Caja {
 	 * Con un stock dado.
 	 */
 	public Caja(Stock s) {
+		orden = new ArrayList <OrdenDeCompra>();
 		facturadas = new ArrayList <OrdenDeCompra>();
 		stock = s;
 	}
@@ -61,6 +63,7 @@ public class Caja {
 		return orden.getPrecioTotal();
 	}
 	
+	
 	/**
 	 * Agrega una nueva orden
 	 * al listado de ordenes.
@@ -68,8 +71,17 @@ public class Caja {
 	 */
 	public Caja nuevaOrden() {
 		OrdenDeCompra ordenNueva = new OrdenDeCompra();
-		facturadas.add(ordenNueva);
+		orden.add(ordenNueva);
 		return this;
+	}
+	
+	/**
+	 * Devuelve la orden n de compra.
+	 * @param numero: El indice del orden a devolver.
+	 * @return la orden de indice numero.
+	 */
+	public OrdenDeCompra getOrdenN(int numero) {
+		return orden.get(numero);
 	}
 	
 }
