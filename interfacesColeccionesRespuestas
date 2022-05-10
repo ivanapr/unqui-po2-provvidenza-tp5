@@ -1,0 +1,26 @@
+Considerar  la siguiente clase:
+
+public class ColeccionadorDeObjetos {
+	public Object getFirstFrom(XXX collection) {
+		return collection.get(0);
+	}
+	public void addLast(Object element, YYY collection) {
+		collection.add(element);
+	}
+	public Collection getSubCollection(ZZZ collection, int from, int to) {
+		return collection.subList(x, y);
+	}
+	public Boolean containsElement(WWW collection, Object element){
+		return collection.contains(element);
+	}
+}
+
+¿Qué ocurriria si utiliza en lugar de XXX, YYY, WWW y ZZZ las clases e interfaces recientemente estudiadas?
+
+-Collection: no es posible ejecutar los mensajes getfirstFrom y getSubCollection, dado que los metodos get y subList no estan definidos en su protocolo.
+-List: se puede ejecutar todos los mensajes porque estan definidos en su protocolo.
+-ArrayList: se puede ejecutar todos los mensajes porque estan definidos en su protocolo.
+-LinkedList: se puede ejecutar todos los mensajes porque estan definidos en su protocolo.
+
+-ArrayList y LinkedList implementan de la interface List, esto quiere decir que si se pasa el tipo  List por parametro, este puede ambos tipos de lista.
+En cambio, si el tipo de parametro es ArrayList o LinkedList, este debera ser especificamente del tipo que fue definido por ser distintas clases, y por ende, de distintos tipos.

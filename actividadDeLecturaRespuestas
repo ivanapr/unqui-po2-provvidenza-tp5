@@ -1,0 +1,23 @@
+1. ¿Que ventajas, en cuanto a polimorfismo, brindan las interfaces de Java?
+- Establecen un protocolo a cumplir por las clases que la implementan, asegurandose de que todas las clases que implementan una interface determinada puedan responder los mensajes establecidos en su protocolo.
+Las interfaces definen nuevos tipos, así las clases que pertenecen a diferentes jerarquias con diferentes estados y comportamientos, pueden tener un mismo tipo si comparten una misma interface.
+Las interfaces permiten la herencia multiple ya que una clase puede implementar varias interfaces.
+
+2. ¿Por que no siempre puedo utilizar clases abstractas para agrupar clases polimorficas?
+- Las clases pueden pertenecer a distintas jerarquías, es decir, no pueden compartir una superclase.
+La agrupacion no es posible debido a que la herencia de clases es simple, esto quiere decir que una clase no puede heredar de mas de una superclase.
+
+3. ¿Que ventajas tienen las clases abstractas sobre las interfaces?
+- Pueden implementar sus metodos para la reutilizacion del codigo, definir modificadores de acceso (publicos, privados, estaticos y protegidos) y definir variables que no sean por defecto o finales.
+Las interfaces no implementan sus metodos, son implicitamente abstractos y de acceso publico, solo los definen para establecer un protocolo.
+
+4. ¿Se puede instanciar una interface?
+- No. Solo pueden ser implementadas por clases o extendidas por otras interfaces.
+
+5. ¿Por que no es recomendable incrementar o modificar las firmas definidas en un interface?
+- Porque todas las clases que la implementen van a romper dado que no estarían cumpliendo con el nuevo protocolo.
+Una practica recomendada seria crear otra interface que extienda la interface a modificar o utilizar metodos por defecto (default methods).
+
+6. ¿Por que, en lenguajes como smalltalk, no es necesaria la implementacion de interfaces?
+- Porque se tratan de lenguajes que no son fuertemente tipados.
+Se asume de forma implicita que un objeto sabe responder a un mensaje por lo tanto no es necesario definir una interfaz de forma explicita.
